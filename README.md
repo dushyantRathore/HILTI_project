@@ -6,12 +6,12 @@
 
 ```
 
-   ___ ___ .___.____  ___________.___          _________   ___ ___    _____  .___ _______   
- /   |   \|   |    | \__    ___/|   |         \_   ___ \ /   |   \  /  _  \ |   |\      \  
-/    ~    \   |    |   |    |   |   |  ______ /    \  \//    ~    \/  /_\  \|   |/   |   \ 
-\    Y    /   |    |___|    |   |   | /_____/ \     \___\    Y    /    |    \   /    |    \
- \___|_  /|___|_______ \____|   |___|          \______  /\___|_  /\____|__  /___\____|__  /
-       \/             \/                              \/       \/         \/            \/ 
+  ___ ___ .__.__   __  .__          _________ .__           .__        
+ /   |   \|__|  |_/  |_|__|         \_   ___ \|  |__ _____  |__| ____  
+/    ~    \  |  |\   __\  |  ______ /    \  \/|  |  \\__  \ |  |/    \ 
+\    Y    /  |  |_|  | |  | /_____/ \     \___|   Y  \/ __ \|  |   |  \
+ \___|_  /|__|____/__| |__|          \______  /___|  (____  /__|___|  /
+       \/                                   \/     \/     \/        \/ 
 
 ```
 
@@ -31,7 +31,7 @@ As of now, we have proposed a decentralised system of raw material and power man
 
 Raw Material Management System
     
-    As we all know, the process of raw material management is quite 
+As we all know, the process of raw material management is quite 
 cumbersome since it requires certification from approved companies and 
 individuals. Along with this, there    have been multiple cases of corruption in 
 this phase. So to tackle these problems, we propose a system wherein the 
@@ -43,12 +43,13 @@ from the company.
 
 Power Management System
     
-    The main problems with the existing infrastructure are :-
+The main problems with the existing infrastructure are :-
 
-Billing process requires manual intervention.
-Electricity bill may not be paid on time by the buyer.
-Unethical management of units by the concerned power board.
-    All these problems can be catered making use of the blockchain and DAPP 
+- Billing process requires manual intervention.
+- Electricity bill may not be paid on time by the buyer.
+- Unethical management of units by the concerned power board.
+
+All these problems can be catered making use of the blockchain and DAPP 
 (Decentralised Applications) technology.
 
 
