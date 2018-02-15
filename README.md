@@ -55,7 +55,7 @@ All these problems can be catered making use of the blockchain and DAPP
 
 ## Contributing
 
-All patches welcome! Please read [CONTRIBUTING.md](https://github.com/satwikkansal/smart_power/blob/master/CONTRIBUTING.md) for furthers details.
+All patches welcome! Please read [CONTRIBUTING.md](https://github.com/dushyantRathore/HILTI_project/CONTRIBUTING.md) for furthers details.
 
 ## License
 
