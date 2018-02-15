@@ -59,4 +59,4 @@ All patches welcome! Please read [CONTRIBUTING.md](https://github.com/dushyantRa
 
 ## License
 
-MIT License - see the [LICENSE](https://github.com/satwikkansal/smart_power/blob/master/LICENSE) file for details
+MIT License - see the [LICENSE](https://github.com/dushyantRathore/HILTI_project/blob/master/LICENSE) file for details
