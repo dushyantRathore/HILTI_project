@@ -45,7 +45,7 @@ def index(block_no=None):
     blocks_data["transaction_lengh"] = len(r["chain"][block_no-1]["transactions"])
     blocks_data["transactions"] = transactions_data
 
-    return render_template("BlockData.html", blocks_data=blocks_data)
+    return render_template("blockdata.html", blocks_data=blocks_data)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8800, debug=True)
