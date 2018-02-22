@@ -35,6 +35,7 @@ def index(block_no=None):
         transaction["item_quantity"] = r["chain"][block_no-1]["transactions"][i]["item_quantity"]
         transaction["item_amount"] = r["chain"][block_no-1]["transactions"][i]["item_amount"]
         transaction["timestamp"] = r["chain"][block_no-1]["transactions"][i]["timestamp"]
+        transaction["transaction_hash"] = r["chain"][block_no - 1]["transactions"][i]["transaction_hash"]
 
         transactions_data.append(transaction)
 
@@ -46,6 +47,7 @@ def index(block_no=None):
     blocks_data["transactions"] = transactions_data
 
     return render_template("blockdata.html", blocks_data=blocks_data)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8800, debug=True)

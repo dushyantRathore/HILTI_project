@@ -1,10 +1,10 @@
 import hashlib
 import json
+import requests
+import hashlib
 from time import time
 from urlparse import urlparse as parse
 from uuid import uuid4
-
-import requests
 from flask import Flask, jsonify, request,abort, render_template
 
 
@@ -113,7 +113,7 @@ class Blockchain:
         self.chain.append(block)
         return block
 
-    def new_transaction(self, item_id, item_name, item_quantity, item_amount, timestamp):
+    def new_transaction(self, item_id, item_name, item_quantity, item_amount, timestamp, transaction_hash):
         """
         Creates a new transaction to go into the next mined Block
         :return: The index of the Block that will hold this transaction
@@ -124,7 +124,8 @@ class Blockchain:
             'item_name' : item_name,
             'item_quantity' : item_quantity,
             'item_amount' : item_amount,
-            'timestamp' : timestamp
+            'timestamp' : timestamp,
+            'transaction_hash' : transaction_hash
         })
 
         return self.last_block['index'] + 1
@@ -193,11 +194,12 @@ def new_transaction():
     item_quantity = request.json["item_quantity"]
     item_amount = request.json["item_amount"]
     timestamp = time()
-
+    transaction_hash = hashlib.sha256(str(item_id) + str(timestamp)).hexdigest()
+    print transaction_hash
     # Create a new Transaction
-    index = blockchain.new_transaction(item_id, item_name, item_quantity, item_amount, timestamp)
+    index = blockchain.new_transaction(item_id, item_name, item_quantity, item_amount, timestamp, transaction_hash)
 
-    response = {'message': 'Transaction will be added to Block {}'.format(index)}
+    response = {'hash': transaction_hash}
     return jsonify(response), 201
 
 
