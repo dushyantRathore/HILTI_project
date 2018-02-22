@@ -6,6 +6,7 @@
 </head>
 <body bgcolor="#F0F0F0">
 
+<br>
 <h1 align="center">Live Inventory Data Explorer</h1>
 <br>
 
@@ -541,9 +542,10 @@ table .ps__rail-y .ps__thumb-y::before {
 
 </style>
 
-<img src="static/logo.png" alt="">
+<img src="static/logo.png" alt="" style="position: absolute; left: 45%; top: 5%;">
 
-<table align="center" border="solid">
+
+<table align="center" border="solid" style="position: absolute; top: 20%;">
     <tr>
         <th>Block No</th>
         <th>Previous Hash</th>
@@ -552,7 +554,7 @@ table .ps__rail-y .ps__thumb-y::before {
     </tr>
     {% for d in data %}
    <tr>
-        <td align="center"><a href="#" >{{  d["Block Number"] }}</a></td>
+        <td align="center"><a href='http://localhost:8800/blockdata/{{ d["Block Number"] }}' >{{  d["Block Number"] }}</a></td>
         <td align="center">{{  d["Previous Hash"] }}</td>
         <td align="center">{{  d["Timestamp"] }}</td>
         <td align="center">{{  d["Total Transactions"] }}</td>

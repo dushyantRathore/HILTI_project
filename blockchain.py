@@ -5,7 +5,7 @@ from urlparse import urlparse as parse
 from uuid import uuid4
 
 import requests
-from flask import Flask, jsonify, request,abort
+from flask import Flask, jsonify, request,abort, render_template
 
 
 class Blockchain:
@@ -113,15 +113,18 @@ class Blockchain:
         self.chain.append(block)
         return block
 
-    def new_transaction(self, meter_address, meter_usage, timestamp):
+    def new_transaction(self, item_id, item_name, item_quantity, item_amount, timestamp):
         """
         Creates a new transaction to go into the next mined Block
         :return: The index of the Block that will hold this transaction
         """
+
         self.current_transactions.append({
-            'meter_address': meter_address,
-            'meter_usage': meter_usage,
-            'timestamp': timestamp,
+            'item_id' : item_id,
+            'item_name' : item_name,
+            'item_quantity' : item_quantity,
+            'item_amount' : item_amount,
+            'timestamp' : timestamp
         })
 
         return self.last_block['index'] + 1
@@ -180,6 +183,24 @@ node_identifier = str(uuid4()).replace('-', '')
 blockchain = Blockchain()
 
 
+@app.route('/transactions/new', methods=['POST'])
+def new_transaction():
+
+    # Fetch the data
+
+    item_id = request.json["item_id"]
+    item_name = request.json["item_name"]
+    item_quantity = request.json["item_quantity"]
+    item_amount = request.json["item_amount"]
+    timestamp = time()
+
+    # Create a new Transaction
+    index = blockchain.new_transaction(item_id, item_name, item_quantity, item_amount, timestamp)
+
+    response = {'message': 'Transaction will be added to Block {}'.format(index)}
+    return jsonify(response), 201
+
+
 @app.route('/mine', methods=['GET'])
 def mine():
 
@@ -209,29 +230,6 @@ def mine():
     }
 
     return jsonify(response), 200
-
-
-@app.route('/transactions/new', methods=['POST'])
-def new_transaction():
-    if not request.json:
-        abort(400)
-
-    values = request.get_json()
-
-    # Check that the required fields are in the POST'ed data
-    required = ['meter_address', 'meter_usage']
-
-    for k in required:
-        if k not in values:
-            return 'Missing values', 400
-
-    timestamp = time()
-
-    # Create a new Transaction
-    index = blockchain.new_transaction(values['meter_address'], values['meter_usage'], timestamp)
-
-    response = {'message': 'Transaction will be added to Block {}'.format(index)}
-    return jsonify(response), 201
 
 
 @app.route('/chain', methods=['GET'])
@@ -277,32 +275,6 @@ def consensus():
         }
 
     return jsonify(response), 200
-
-
-@app.route('/get_usage', methods=['POST'])
-def getTotalUsage() :
-
-    r = request.get_json()
-
-    # print r
-
-    meter_address = r["meter_address"]
-
-    chain = blockchain.chain
-
-    total_usage = 0
-
-    for block in chain:
-        for trans in block["transactions"]:
-            if meter_address == trans["meter_address"]:
-                total_usage += trans["meter_usage"]
-
-    return json.dumps({
-        "meter_address": meter_address,
-        "usage_amount": total_usage
-    })
-
-
 
 
 if __name__ == '__main__':

@@ -9,8 +9,8 @@ i = 1
 
 while i <= 20:
     data = {}
-    data['meter_address'] = meter_address
-    data['meter_usage'] = random.randint(5,15)
+    data['Item ID'] = meter_address
+    data['Item quantitiy'] = random.randint(5,15)
     data['timestamp'] = time.time()
 
     print(data)

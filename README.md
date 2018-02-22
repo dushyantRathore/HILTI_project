@@ -1,25 +1,22 @@
-<h1 align="center">Smart Grid</h1>
+<h1 align="center">Hilti-Chain</h1>
 
-<p align="center">A one line description of the project.</p>
-
-<p align="center"><a href="#site">Check It Out!</a> | <a href="#documentation">Read the Docs</a></p>
+```
+ __  ____  _     ______  ____          __  __ __   ____  ____  ____  
+|  |  ||    || |   |      ||    |        /  ]|  |  | /    ||    ||    \ 
+|  |  | |  | | |   |      | |  | _____  /  / |  |  ||  o  | |  | |  _  |
+|  _  | |  | | |___|_|  |_| |  ||     |/  /  |  _  ||     | |  | |  |  |
+|  |  | |  | |     | |  |   |  ||_____/   \_ |  |  ||  _  | |  | |  |  |
+|  |  | |  | |     | |  |   |  |      \     ||  |  ||  |  | |  | |  |  |
+|__|__||____||_____| |__|  |____|      \____||__|__||__|__||____||__|__|
+                                                                        
 
 ```
 
-  _________                      __      ________      .__    .___
- /   _____/ _____ _____ ________/  |_   /  _____/______|__| __| _/
- \_____  \ /     \\__  \\_  __ \   __\ /   \  __\_  __ \  |/ __ | 
- /        \  Y Y  \/ __ \|  | \/|  |   \    \_\  \  | \/  / /_/ | 
-/_______  /__|_|  (____  /__|   |__|    \______  /__|  |__\____ | 
-        \/      \/     \/                      \/              \/
-
-```
-
-[![vido_thumbnail](https://c1.staticflickr.com/3/2154/2054140257_58e87296b6.jpg)](https://youtu.be/D1QPoWUEKXk)
+[![vido_thumbnail]()]()
 
 ## Abstract
 
-We have built a Smart City prototype by leveraging Internet of Things (IoT) and Smart Contracts to come up with a peer-to-peer monitored energy distribution system to solve most of the power grid problems in the state of Rajasthan. The main problems with the existing infrastructure are :-
+We have built a smart prototype by leveraging Internet of Things (IoT) and Smart Contracts to come up with a peer-to-peer monitored energy distribution system to solve most of the power grid problems in the state of Rajasthan. The main problems with the existing infrastructure are :-
 
 - Billing process requires manual intervention.
 - Electricity bill may not be paid on time by the buyer
