@@ -52,10 +52,39 @@ The main problems with the existing infrastructure are :-
 All these problems can be catered making use of the blockchain and DAPP 
 (Decentralised Applications) technology.
 
+## Instructions to run
 
-## Contributing
+1. Procurement Process
 
-All patches welcome! Please read [CONTRIBUTING.md](https://github.com/dushyantRathore/HILTI_project/CONTRIBUTING.md) for furthers details.
+--- ENTER STEPS HERE ---
+
+2. Resource Management
+
+On seperate terminal windows, execute the following commands in the `/resource_management` directory
+
+```sh
+python3 blockchain.py
+```
+
+```sh
+python3 smartcontract.py
+```
+
+```sh
+python3 upload_units_raspi.py & python paymentchain.py
+```
+
+Now install the android application and connect the device to the power port.
+#TODO: Add instructions for chaging urls.
+
+Query for the bill and make the payment.
+
+```sh
+python3 Graph.py
+```
+
+Open the link "http://localhost:8000" in browser of your choice and the block explorer should be up and running.
+
 
 ## License
 
