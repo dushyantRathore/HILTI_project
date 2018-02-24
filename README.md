@@ -15,7 +15,7 @@
 
 ```
 
-[![vido_thumbnail](https://c1.staticflickr.com/3/2154/2054140257_58e87296b6.jpg)](https://www.youtube.com/watch?v=4cil1Y8VGW8)
+[![vido_thumbnail](https://s19.postimg.org/hbw2js9f7/Screen_Shot_2018-02-24_at_7.45.03_PM.png)](https://www.youtube.com/watch?v=uv_Aiq2_I8I)
 
 ## Abstract
 
