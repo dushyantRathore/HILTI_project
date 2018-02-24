@@ -1,0 +1,30 @@
+<resources>
+    <!-- detail -->
+    <dimen name="detail_title_text_size">42sp</dimen>
+    <dimen name="detail_body_text_size">20sp</dimen>
+    <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.3</item>
+
+
+    <!-- toolbar -->
+    <dimen name="icon_toolbar_size">56dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="appbar_height">64dp</dimen>
+
+    <!-- Floating action button-->
+    <dimen name="fab_press_translation_z">6dp</dimen>
+    <dimen name="fab_margin">24dp</dimen>
+    <dimen name="fab_material_size">56dp</dimen>
+
+    <!-- card -->
+    <dimen name="card_title_padding_bottom">16dp</dimen>
+    <dimen name="card_title_padding_left">24dp</dimen>
+    <dimen name="card_title_padding_top">24dp</dimen>
+    <dimen name="card_title_padding_right">24dp</dimen>
+    <dimen name="card_subtitle_padding_left">24dp</dimen>
+    <dimen name="card_subtitle_padding_bottom">24dp</dimen>
+    <dimen name="card_subtitle_padding_right">24dp</dimen>
+
+    <!-- Keylines -->
+    <dimen name="keyline_one">24dp</dimen>
+    <dimen name="keyline_two">80dp</dimen>
+</resources>
