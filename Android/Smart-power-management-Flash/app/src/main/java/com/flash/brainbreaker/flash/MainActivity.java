@@ -1,15 +1,20 @@
 package com.flash.brainbreaker.flash;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Looper;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.InputType;
 import android.util.Patterns;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.heinrichreimersoftware.singleinputform.SingleInputFormActivity;
 import com.heinrichreimersoftware.singleinputform.steps.Step;
@@ -41,10 +46,18 @@ public class MainActivity extends SingleInputFormActivity {
     private static final String DATA_KEY_METER = "meter";
     private static final String URL = "http://9021e721.ngrok.io/get_bill";
     SweetAlertDialog pDialog;
+    private static final int MY_CAMERA_REQUEST_CODE = 100;
+
     @Override
     protected List<Step> onCreateSteps(){
 
-        // Appsee Initialization
+        Toast.makeText(this, "Please make sure you have provided camera permission in Settings.", Toast.LENGTH_LONG).show();
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.FLASHLIGHT)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.FLASHLIGHT},
+                    MY_CAMERA_REQUEST_CODE);
+        }
         List<Step> steps = new ArrayList<>();
 
         setInputGravity(Gravity.CENTER);
@@ -85,6 +98,20 @@ public class MainActivity extends SingleInputFormActivity {
         return steps;
 
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == MY_CAMERA_REQUEST_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Camera Permission is needed to access flashlight", Toast.LENGTH_LONG).show();
+            } else {
+                finish();
+                Toast.makeText(this, "Camera Permission is needed to access flashlight", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     @Override
