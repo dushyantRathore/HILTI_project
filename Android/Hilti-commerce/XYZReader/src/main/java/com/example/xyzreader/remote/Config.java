@@ -12,7 +12,7 @@ public class Config {
     static {
         URL url = null;
         try {
-            url = new URL("https://api.myjson.com/bins/l9em5" );
+            url = new URL("https://gist.githubusercontent.com/brainbreaker/f01251b36ed49449487256c7eab3022c/raw/86f4dfc6ce578919ba143cf713e1359009b5534c/hilticommerce.json" );
             System.out.print("Reading URL");
         } catch (MalformedURLException ignored) {
             // TODO: throw a real error
