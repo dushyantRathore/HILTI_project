@@ -29,19 +29,22 @@ Smart Contracts form the core of the system. By using Smart Contracts and creati
 As of now, we have proposed a decentralised system of raw material and power management in the initial stages of construction process. These two test cases have been discussed below :-
 
 
-Raw Material Management System
+### Raw Material Management System
     
 As we all know, the process of raw material management is quite 
 cumbersome since it requires certification from approved companies and 
-individuals. Along with this, there    have been multiple cases of corruption in 
+individuals. Along with this, there have been multiple cases of corruption in 
 this phase. So to tackle these problems, we propose a system wherein the 
 entire transaction starting from shipping of raw materials to their delivery gets 
 deployed on a private blockchain. Since the transaction is deployed on a 
 private blockchain, it is transparent and involves a consensus mechanism for 
 execution and validation using the digital identity of the concerned people 
-from the company.
+from the company. 
 
-Power Management System
+We have also tried to reduce the manual intervention involved in the process by deploying the entire payment system 
+to the blockchain network using Smart Contracts which can be triggered automatically.
+
+### Power Management System
 
 The main problems with the existing infrastructure are :-
 
@@ -54,17 +57,19 @@ All these problems can be catered making use of the blockchain and DAPP
 
 ## Instructions to run
 
-1. Procurement Process
+**1. Procurement Process**
 
 On seperate command line windows, execute the following commands in the `/procurement` directory
 
 ```sh
 python3 blockchain.py
 ```
+This file contains main code for the blockchain. 
 
 ```sh
 python3 blockdata.py
 ```
+This file contains the code for block explorer which is used to visualise mined blocks and transactions.
 
 Install `ngrok`, tunnel the port 5000 using ngrok to get a url. Here's the command for it,
 ```sh
@@ -72,7 +77,7 @@ Install `ngrok`, tunnel the port 5000 using ngrok to get a url. Here's the comma
 ```
 Note: Command might vary for Windows platform
 
-Copy the url given by ngrok and update it in android app's source code, [here](https://github.com/dushyantRathore/HILTI_project/blob/master/Android/Procurement-App/app/src/main/java/com/fingerprint/sample/DecoderActivity.java#L59). This registration of app with a blockchain node, is just a one time process and need not to be done when runniung again.
+Copy the url given by ngrok and update it in android app's source code, [here](https://github.com/dushyantRathore/HILTI_project/blob/master/Android/Procurement-App/app/src/main/java/com/fingerprint/sample/DecoderActivity.java#L59). This registration of app with a blockchain node, is just a one time process and need not to be done when running again.
 
 Now build and install the android application (Hilti-Commerce) and submit an order for raw materials. (App is available in the `/Android directory`)
 
@@ -82,6 +87,7 @@ Now,
 ```sh
 python3 Graph.py
 ```
+Graph.py serves as the home page for the block explorer.
 
 Open the link "http://localhost:8000" in browser of your choice and the block explorer should be up and running. You can click the individual transactions to verify their contents.
 
@@ -96,10 +102,12 @@ python3 blockchain.py
 ```sh
 python3 smartcontract.py
 ```
+This file implements the smart contract and payment system.
 
 ```sh
 python3 upload_units_raspi.py & python paymentchain.py
 ```
+upload_units_raspi.py uploads the sample units from Raspberry pi to blockchain network. 
 
 Install `ngrok`, tunnel the port 5000 using ngrok to get a url. Here's the command for it,
 ```sh
