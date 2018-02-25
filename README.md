@@ -42,7 +42,7 @@ execution and validation using the digital identity of the concerned people
 from the company.
 
 Power Management System
-    
+
 The main problems with the existing infrastructure are :-
 
 - Billing process requires manual intervention.
@@ -56,11 +56,38 @@ All these problems can be catered making use of the blockchain and DAPP
 
 1. Procurement Process
 
---- ENTER STEPS HERE ---
+On seperate command line windows, execute the following commands in the `/procurement` directory
+
+```sh
+python3 blockchain.py
+```
+
+```sh
+python3 blockdata.py
+```
+
+Install `ngrok`, tunnel the port 5000 using ngrok to get a url. Here's the command for it,
+```sh
+./ngrok http 5000
+```
+Note: Command might vary for Windows platform
+
+Copy the url given by ngrok and update it in android app's source code, [here](https://github.com/dushyantRathore/HILTI_project/blob/master/Android/Procurement-App/app/src/main/java/com/fingerprint/sample/DecoderActivity.java#L59). This registration of app with a blockchain node, is just a one time process and need not to be done when runniung again.
+
+Now build and install the android application (Hilti-Commerce) and submit an order for raw materials. (App is available in the `/Android directory`)
+
+Build and install Procurement-App and verify and approve the order with your identity. (App is available in the `/Android directory`) You'll receive the transaction hash as a proof, and the distributor will be notified via the SMS.
+
+Now,
+```sh
+python3 Graph.py
+```
+
+Open the link "http://localhost:8000" in browser of your choice and the block explorer should be up and running. You can click the individual transactions to verify their contents.
 
 2. Resource Management
 
-On seperate terminal windows, execute the following commands in the `/resource_management` directory
+On seperate command line windows, execute the following commands in the `/resource_management` directory
 
 ```sh
 python3 blockchain.py
@@ -74,17 +101,23 @@ python3 smartcontract.py
 python3 upload_units_raspi.py & python paymentchain.py
 ```
 
-Now install the android application and connect the device to the power port.
-#TODO: Add instructions for chaging urls.
+Install `ngrok`, tunnel the port 5000 using ngrok to get a url. Here's the command for it,
+```sh
+./ngrok http 5000
+```
+Note: Command might vary for Windows platform
 
-Query for the bill and make the payment.
+Copy the url given by ngrok and update it in android app's source code, [here](https://github.com/dushyantRathore/HILTI_project/blob/master/Android/Smart-power-management-Flash/app/src/main/java/com/flash/brainbreaker/flash/MainActivity.java#L42) and [here](https://github.com/dushyantRathore/HILTI_project/blob/master/Android/Smart-power-management-Flash/app/src/main/java/com/flash/brainbreaker/flash/PaymentActivity.java#L35). This registration with a blockchain node, is just a one time process and need not to be done when running again.
+
+Now build and install the android application (Smart Power Management Flash) and connect the device to the power port. (App is available in the `/Android directory`)
+
+Sign in with any details (use meter ID as 1x11 for now) and query for the bill and make the payment.
 
 ```sh
 python3 Graph.py
 ```
 
 Open the link "http://localhost:8000" in browser of your choice and the block explorer should be up and running.
-
 
 ## License
 
